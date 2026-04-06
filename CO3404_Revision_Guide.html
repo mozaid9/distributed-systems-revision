@@ -10,7 +10,7 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
 a{color:inherit;text-decoration:none}
 
 /* ── SIDEBAR ── */
-#sidebar{position:fixed;top:0;left:0;width:270px;height:100vh;overflow-y:auto;background:#1e1e2e;color:#cdd6f4;padding:0 0 2rem 0;z-index:100}
+#sidebar{position:fixed;top:0;left:0;width:270px;height:100vh;overflow-y:auto;background:#1e1e2e;color:#cdd6f4;padding:0 0 2rem 0;z-index:100;transform:translateX(0);transition:transform .22s ease}
 #sidebar h2{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:#89b4fa;padding:1.2rem 1rem 0.4rem;border-top:1px solid #313244}
 #sidebar h2:first-child{border-top:none;padding-top:1.4rem}
 #sidebar a{display:block;padding:4px 1rem 4px 1.2rem;font-size:13px;color:#bac2de;border-left:3px solid transparent;transition:all .15s}
@@ -20,9 +20,11 @@ a{color:inherit;text-decoration:none}
 #sidebar .brand span{font-size:12px;color:#6c7086}
 #sidebar .week-badge{display:inline-block;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:700;vertical-align:middle}
 .w1{background:#f38ba8;color:#1e1e2e}.w2{background:#fab387;color:#1e1e2e}.w3{background:#a6e3a1;color:#1e1e2e}
+#sidebar-toggle{position:fixed;top:14px;left:14px;z-index:220;background:#111827;color:#f8fafc;border:none;border-radius:12px;padding:.7rem .9rem;font-size:14px;font-weight:700;box-shadow:0 10px 24px rgba(15,23,42,.18);cursor:pointer}
+#sidebar-overlay{position:fixed;inset:0;background:rgba(15,23,42,.42);z-index:90;opacity:0;pointer-events:none;transition:opacity .2s ease}
 
 /* ── MAIN CONTENT ── */
-#main{margin-left:270px;padding:2.5rem 3rem;max-width:1020px}
+#main{margin-left:270px;padding:2.5rem 3rem;max-width:1020px;transition:margin-left .22s ease,padding .22s ease}
 section{padding-top:4rem;margin-top:-2rem}
 h1{font-size:2rem;color:#1e1e2e;margin-bottom:.4rem}
 h1 .sub{font-size:1rem;font-weight:400;color:#6c7086;display:block;margin-top:.2rem}
@@ -75,31 +77,91 @@ pre code{background:none;color:inherit;padding:0}
 .tag{display:inline-block;background:#e0e7ff;color:#3730a3;font-size:12px;padding:1px 7px;border-radius:10px;margin:2px}
 hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+body.sidebar-collapsed #sidebar{transform:translateX(-100%)}
+body.sidebar-collapsed #main{margin-left:0}
+body.sidebar-open #sidebar-overlay{opacity:1;pointer-events:auto}
 @media(max-width:900px){.two-col{grid-template-columns:1fr}}
 @media(max-width:980px){
-  #sidebar{position:relative;width:100%;height:auto;max-height:none;padding-bottom:1rem}
-  #sidebar .brand{position:sticky;top:0;background:#1e1e2e;z-index:2}
-  #main{margin-left:0;padding:1.2rem 1rem;max-width:none}
-  section{padding-top:2rem;margin-top:0}
-  h1{font-size:1.6rem}
-  h2.section-title{font-size:1.3rem;margin:1.8rem 0 1rem}
+  #sidebar{width:min(82vw,320px);height:100vh;padding-bottom:4rem;box-shadow:0 0 0 rgba(0,0,0,0)}
+  body:not(.sidebar-open) #sidebar{transform:translateX(-100%)}
+  body.sidebar-open #sidebar{transform:translateX(0);box-shadow:0 18px 50px rgba(15,23,42,.25)}
+  #main{margin-left:0;padding:4.5rem 1rem 1.4rem;max-width:none}
+  section{padding-top:1.6rem;margin-top:0}
+  h1{font-size:1.55rem;line-height:1.25}
+  h2.section-title{font-size:1.28rem;margin:1.6rem 0 1rem}
+  h3{font-size:1.02rem}
+  p,li,td{font-size:14px}
   table{display:block;overflow-x:auto;white-space:nowrap}
-  pre{font-size:12px}
+  pre{font-size:12px;padding:.9rem 1rem}
 }
 @media(max-width:640px){
-  body{font-size:14px}
+  body{font-size:14px;line-height:1.75}
+  #sidebar-toggle{top:10px;left:10px;padding:.65rem .82rem;border-radius:11px}
   #sidebar h2{padding:1rem .9rem .3rem}
-  #sidebar a{padding:8px .9rem;font-size:12px}
-  .box{padding:.9rem 1rem}
+  #sidebar a{padding:10px .95rem;font-size:12px}
+  .box{padding:.95rem 1rem;border-left-width:4px}
   ul,ol{margin-left:1.1rem}
   .priority{display:inline-block;margin-top:.35rem;margin-left:0}
+  #main{padding:4.25rem .92rem 1.1rem}
+  h1{font-size:1.42rem}
+  h2.section-title{font-size:1.18rem}
 }
 </style>
 <script>
-// Smooth scroll for sidebar links
 document.addEventListener('DOMContentLoaded', () => {
-  const isDesktopSidebar = () => window.innerWidth > 980;
+  const mobileMq = window.matchMedia('(max-width: 980px)');
+  const body = document.body;
   const navLinks = document.querySelectorAll('#sidebar a[href^="#"]');
+  const toggleBtn = document.getElementById('sidebar-toggle');
+  const overlay = document.getElementById('sidebar-overlay');
+
+  const isDesktopSidebar = () => !mobileMq.matches;
+
+  const closeSidebar = () => {
+    if (isDesktopSidebar()) {
+      body.classList.add('sidebar-collapsed');
+      body.classList.remove('sidebar-open');
+    } else {
+      body.classList.remove('sidebar-open');
+      body.classList.add('sidebar-collapsed');
+    }
+  };
+
+  const openSidebar = () => {
+    if (isDesktopSidebar()) {
+      body.classList.remove('sidebar-collapsed');
+    } else {
+      body.classList.add('sidebar-open');
+      body.classList.remove('sidebar-collapsed');
+    }
+  };
+
+  const syncSidebarMode = () => {
+    if (isDesktopSidebar()) {
+      body.classList.remove('sidebar-open');
+      if (!body.classList.contains('sidebar-collapsed')) body.classList.remove('sidebar-collapsed');
+      toggleBtn.setAttribute('aria-label', body.classList.contains('sidebar-collapsed') ? 'Open sidebar' : 'Close sidebar');
+    } else {
+      body.classList.add('sidebar-collapsed');
+      body.classList.remove('sidebar-open');
+      toggleBtn.setAttribute('aria-label', 'Open menu');
+    }
+  };
+
+  toggleBtn.addEventListener('click', () => {
+    if (isDesktopSidebar()) {
+      body.classList.toggle('sidebar-collapsed');
+      toggleBtn.setAttribute('aria-label', body.classList.contains('sidebar-collapsed') ? 'Open sidebar' : 'Close sidebar');
+    } else {
+      body.classList.toggle('sidebar-open');
+      body.classList.remove('sidebar-collapsed');
+      toggleBtn.setAttribute('aria-label', body.classList.contains('sidebar-open') ? 'Close menu' : 'Open menu');
+    }
+  });
+
+  overlay.addEventListener('click', () => {
+    if (!isDesktopSidebar()) closeSidebar();
+  });
 
   // Smooth scroll is only forced on desktop. On phones we let the browser
   // handle anchor navigation naturally to avoid jumpy local-file behaviour.
@@ -109,30 +171,49 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const target = document.querySelector(link.getAttribute('href'));
       if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      if (!isDesktopSidebar()) closeSidebar();
+      return;
     });
+    if (!isDesktopSidebar()) {
+      link.addEventListener('click', () => closeSidebar());
+    }
   });
 
-  if (!isDesktopSidebar()) return;
-
-  // Active link on scroll
   const sections = document.querySelectorAll('section[id]');
-  const observer = new IntersectionObserver(entries => {
+  let observer;
+  const buildObserver = () => new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         navLinks.forEach(l => l.classList.remove('active'));
         const active = document.querySelector(`#sidebar a[href="#${entry.target.id}"]`);
         if (active) {
           active.classList.add('active');
-          active.scrollIntoView({block:'nearest'});
+          if (isDesktopSidebar()) active.scrollIntoView({block:'nearest'});
         }
       }
     });
   }, {rootMargin: '-10% 0px -80% 0px'});
-  sections.forEach(s => observer.observe(s));
+
+  const connectObserver = () => {
+    if (observer) observer.disconnect();
+    if (!isDesktopSidebar()) return;
+    observer = buildObserver();
+    sections.forEach(s => observer.observe(s));
+  };
+
+  mobileMq.addEventListener('change', () => {
+    syncSidebarMode();
+    connectObserver();
+  });
+
+  syncSidebarMode();
+  connectObserver();
 });
 </script>
 </head>
 <body>
+<button id="sidebar-toggle" type="button" aria-label="Toggle sidebar">Menu</button>
+<div id="sidebar-overlay" aria-hidden="true"></div>
 
 <!-- ═══════════════════════ SIDEBAR ═══════════════════════ -->
 <nav id="sidebar">

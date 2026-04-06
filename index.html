@@ -98,18 +98,24 @@ hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
 <script>
 // Smooth scroll for sidebar links
 document.addEventListener('DOMContentLoaded', () => {
-  // Smooth scroll
-  document.querySelectorAll('#sidebar a[href^="#"]').forEach(link => {
+  const isDesktopSidebar = () => window.innerWidth > 980;
+  const navLinks = document.querySelectorAll('#sidebar a[href^="#"]');
+
+  // Smooth scroll is only forced on desktop. On phones we let the browser
+  // handle anchor navigation naturally to avoid jumpy local-file behaviour.
+  navLinks.forEach(link => {
     link.addEventListener('click', e => {
+      if (!isDesktopSidebar()) return;
       e.preventDefault();
       const target = document.querySelector(link.getAttribute('href'));
       if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
 
+  if (!isDesktopSidebar()) return;
+
   // Active link on scroll
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('#sidebar a[href^="#"]');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

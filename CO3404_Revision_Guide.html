@@ -907,6 +907,21 @@ If you are short on time, do these five first (they cover the most marks and mos
 <div class="box new"><div class="box-title">Lecturer Strategy Note</div>
 The lecturer's <em>Revision strategy</em> sheet reinforces the same pattern as the papers, and also flags several <strong>new-this-year topics</strong> that deserve explicit attention: <strong>Bastion host</strong>, <strong>Event Notification</strong>, <strong>Event Carried State Transfer (ECST)</strong>, <strong>Network peering</strong>, <strong>3-tier architecture</strong>, and <strong>SQL injection</strong>. These are covered in this guide even where older papers do not test them heavily.
 </div>
+<div class="box key"><div class="box-title">Most likely focus first — based on the lecturer's directed revision list</div>
+<p>If you want the most exam-realistic order, follow this list <strong>before</strong> worrying about lower-frequency historic topics. The lecturer writes the paper, so his directed revision list should be treated as the best clue for what deserves your earliest effort.</p>
+<ol>
+  <li><a href="#cryptography">Cryptography foundations</a> then <a href="#tls">TLS, HTTPS, certificates and security properties</a>.</li>
+  <li><a href="#apis">API operation</a> then <a href="#apidocs">API documentation / OpenAPI</a>.</li>
+  <li><a href="#cloud">Cloud service models</a> and <a href="#resilience">scalability, resilience and high availability</a>.</li>
+  <li><a href="#architecture">Monolith vs 3-tier vs microservices</a>, including pros, cons and when each makes sense.</li>
+  <li><a href="#messaging">Event patterns and message patterns</a>, especially Event Notification, ECST, queues and pub-sub trade-offs.</li>
+  <li><a href="#containers">Docker Compose, Dockerfile, volumes and bind mounts</a> plus <a href="#kubernetes">Kubernetes architecture and components</a>.</li>
+  <li><a href="#terraform">Terraform</a>, especially why declarative IaC is useful compared with clicking around in a cloud portal.</li>
+  <li><a href="#networking">Bastion host and network peering</a>.</li>
+  <li><a href="#apis">SQL injection and how to prevent it</a>.</li>
+  <li><a href="#code-reading">Code-reading practice</a> for Docker Compose, Dockerfile, Kubernetes YAML and Terraform.</li>
+ </ol>
+</div>
 <table>
   <tr><th>Topic</th><th>Papers appeared in</th><th>Priority</th><th>Typical marks</th></tr>
   <tr><td>Security: TLS handshake, digital signatures, certificates</td><td>6 / 6</td><td><span class="priority p-critical">CRITICAL</span></td><td>10–25</td></tr>
@@ -941,12 +956,16 @@ The lecturer's <em>Revision strategy</em> sheet reinforces the same pattern as t
 </ol>
 </div>
 
+<div class="box new"><div class="box-title">Use this order before the old-paper frequency table</div>
+<p>Treat the lecturer-directed topics as the <strong>real first-pass syllabus</strong>. Past-paper frequency still matters, but if the lecturer has explicitly pointed you toward a topic, assume it has a strong chance of appearing or influencing the style of this year's paper.</p>
+</div>
+
 <h3>Best order to build confidence</h3>
 <table>
   <tr><th>Phase</th><th>Focus</th><th>Recommended past-paper questions</th></tr>
-  <tr><td>Phase 1</td><td>Highest-value repeated topics</td><td>2022/23 main: Q2b, Q6b. 2022/23 resit: Q1a, Q4, Q6. 2023/24 main: Q1a, Q2b, Q4. 2023/24 refer/defer: Q2a, Q3a, Q3b, Q3d. 2024/25 main: Q1a, Q3b, Q3c, Q4b. 2024/25 resit: Q1a,b,c, Q2a,b,c, Q3b,c.</td></tr>
-  <tr><td>Phase 2</td><td>Security and architecture depth</td><td>Certificate / TLS / signature questions, API gateway questions, CORS questions, IAM flow questions.</td></tr>
-  <tr><td>Phase 3</td><td>New-this-year topics</td><td>Bastion host, Event Notification, ECST, network peering, 3-tier architecture, SQL injection.</td></tr>
+  <tr><td>Phase 1</td><td>Lecturer-directed focus topics</td><td>TLS security properties and operation; API operation/documentation; cloud models; scalability/resilience/high availability; monolith vs 3-tier vs microservices; event and message patterns; Bastion host; SQL injection; Kubernetes architecture; Terraform benefits; Docker volumes and bind mounts.</td></tr>
+  <tr><td>Phase 2</td><td>Best matching past-paper practice</td><td>2022/23 main: Q2b, Q6b. 2022/23 resit: Q1a, Q4, Q6. 2023/24 main: Q1a, Q2b, Q4. 2023/24 refer/defer: Q2a, Q3a, Q3b, Q3d. 2024/25 main: Q1a, Q3b, Q3c, Q4b. 2024/25 resit: Q1a,b,c, Q2a,b,c, Q3b,c.</td></tr>
+  <tr><td>Phase 3</td><td>Code-reading and explanation practice</td><td>Explain sections of Docker Compose, Dockerfile, Terraform and Kubernetes YAML without notes. Use the code-reading section and then cross-check with the topic sections.</td></tr>
   <tr><td>Phase 4</td><td>Final timed mixed practice</td><td>Pick any three 25-mark questions you would choose in the real exam and do them back-to-back in 90 minutes.</td></tr>
 </table>
 

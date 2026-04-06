@@ -1,0 +1,141 @@
+2022-2023
+
+Examination Period 4
+
+Module:	CO3404
+
+Module CRN:	57886
+
+Exam Type:	Written
+
+Module Title:	Distributed Systems
+
+Module Leader:	Tony Nicol
+
+
+Examination Paper Structure
+
+There are 6 questions in total.
+There are no appendices
+The mark obtainable for a question or part of a question is shown in brackets alongside the question
+
+Students to be provided with:
+
+1 answer book
+
+Instructions to Students:
+
+The time allowed to complete this examination paper is 2.0 hours.
+Answer only 4 of the 6 questions. If you attempt more, only the first 4 in the answer booklet will be awarded marks
+Each question is worth 25 marks
+
+Academic judgment is used in awarding marks. However, guidelines of how marks are distributed can be found within the questions
+
+The use of calculators is permitted in this examination.
+The use of dictionaries is not permitted in this examination.
+
+
+
+
+Q1.
+	•	Many enterprise systems are monolithic, but today there is a business drive towards distributed systems, particularly towards a microservice architecture. Compare and contrast a monolithic system with a distributed microservice-based system. You should consider advantages and disadvantages of each approach from a technical and business standpoint. 
+
+Up to three marks are available for five key advantages or disadvantages, clearly explained and justified by way of comparisons or contrasts. 
+
+	•	Marks)
+
+	•	Explain how the following cloud service models operate: IaaS, PaaS, SaaS, DBaaS and provide an example use-case for each, justifying why you would recommend your preferred model for each use-case.
+
+Marks will be roughly evenly distributed across four clearly explained models and associated recommendations for your chosen use-cases
+(10 Marks)
+
+Q2.
+	•	“RESTful” services should support Hypermedia as the Engine of Application State (HATEOAS)”.  Do all RESTful APIs conform to this statement?  With the aid of examples, explain HATEOAS, describe an advantage and disadvantage and relate it to the Richardson’s maturity model.
+
+Your answer should include the following six key points: HATEOAS explanation, informed opinion of conformity, an example to illustrate HATEOAS, an advantage and disadvantage of HATEOAS and relevant reference to Richardson’s maturity model.
+(13 Marks)
+
+	•	Application Programming Interfaces (APIs) rely on a clear understanding of an API contract so good documentation of an API is essential.  With reference to using the OpenAPI standard, describe three approaches to creating API documentation and provide examples of where you, or your organisation may choose to use one approach over another.
+
+Four marks are available for a clear explanation of each of the three approaches when accompanied by a relevant and justified example of why you recommend each approach.
+
+(12 Marks)
+
+
+Q3.
+You have designed a cloud-based solution to host a microservice in a single availability zone (AZ) in a region hosting three AZs.  To increase security of your solution your design includes two sub-networks: one for a bastion host and web server and another for your database server.  
+
+You have created a VNet and been allocated a network CIDR block for your private IP addresses of 10.1.0.0/16 which extends all three AZs in your region.  
+
+From your allocated pool of IP addresses, allocate appropriate CIDR blocks to each AZ subnet and allocate appropriate CIDR blocks to the two sub-nets in the AZ you are deploying your solution into.
+
+	•	Draw your solution design
+
+Marks will be awarded for a clear indication of the VNet, subnets, servers, Network Security Groups (NSG), routers and whatever else you need. 
+(10 Marks)
+
+	•	Explain the rationale for your design including a trace of the traffic around your solution.
+
+Marks are awarded for a clear and justified explanation of how your architecture works. You should consider each use-case: public web user and administrative user patching the servers within your solution.
+(10 Marks)
+
+	•	Label each subnetwork with its CIDR block range
+
+This should consist of CIDR block range for each AZ in your VNet and CIDR block ranges of your subnets within your chosen AZ.
+
+You should show any working or rationale you used to calculate the CIDR blocks
+
+(5 Marks)
+
+
+Q4.
+HTTPS is an essential approach to protecting data in transit.  With the aid of a diagram, explain how HTTPS works from requesting a web resource to the point at which a secure session is established.  Your answer should include, where in the process the following techniques are used and what they are used for. There is no need for a detailed explanation of each individual cypher algorithm, but you should explain what properties of each technique, are used to do what, in the secure session establishment:
+	•	Symmetric Key Encryption
+	•	Asymmetric Key Encryption
+	•	Hashed Message Authentication Code (HMAC)
+	•	Digital Signature
+	•	Digital Certificate
+	•	Key exchange
+This question could be answered in several ways such as: process flow, sequence diagram or list. The key point is that you explain the process of establishing the connection and at each relevant point, discuss what is happening, which technique from the list is being used and for what reason. Marks will be apportioned to each key point in a correctly and articulately explained sequence. For example, and as a very rough guide (as academic judgement will be used), consider the following answer: at point a, information b is transferred to the server and includes c; this is used to create d using technique e by process f.  
+This may, for example, attract up to five marks. In which case, you could assume 4 other similar stages of the process but it’s your decision as to the chosen structured approach.
+(25 Marks)
+Q5.
+Identity and Access Management (IAM) is key to securing web-based systems.  There is significant relevant terminology an IT professional needs to be aware of in this area.  Describe the following IAM terminology and acronyms and provide the context in which each is used:
+
+	•	Authentication						(2 Marks)
+	•	Multi Factor Authentication				(2 Marks)
+	•	Authorisation						(2 Marks)
+	•	Security Principal					(2 Marks)
+	•	Single Sign-on (SSO)					(2 Marks)
+	•	Active Directory (AD)					(2 Marks)
+	•	Active Directory Federated Services (ADFS)		(2 Marks)
+	•	SAML							(2 Marks)
+	•	OAuth and OpenId Connect				(3 Marks)
+	•	JWT							(2 Marks)
+	•	Identity Provider (IdP)					(2 Marks)
+	•	Service Provider (SP)					(2 Marks)
+
+
+Q6.
+With reference to Figure 1, answer the following questions:
+
+	•	What architecture pattern is this?  Justify your answer.
+(3 Marks)
+
+	•	In terms of synchronous and asynchronous messaging, what type of messaging is used at label 1, 2 and 4? Explain your answer.
+(6 Marks)
+
+	•	Explain how you might add a notification service to inform the user of the progress of their transaction? E.g., via email or SMS. Note: don’t redraw Figure 1, simply reference it in your explanation.
+(6 Marks)
+
+	•	Describe the operation of the object labelled number 4
+(5 Marks)
+
+	•	If the shipping microservice failed, would the business no longer be able to operate? Explain your answer
+(5 Marks)
+
+
+
+
+
+Figure 1

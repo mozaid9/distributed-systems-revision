@@ -1,0 +1,140 @@
+2023-2024
+
+Examination Period 2
+
+Module:	CO3404
+
+Module CRN:	57886
+
+Exam Type:	Written
+
+Module Title:	Distributed Systems
+
+Module Leader:	Tony Nicol
+
+
+Examination Paper Structure
+
+There are 6 questions in total.
+There are no appendices.
+The mark obtainable for a question or part of a question is shown in brackets alongside the question.
+
+Students to be provided with:
+
+1 answer book
+
+Instructions to Students:
+
+The time allowed to complete this examination paper is 1.5 hours.
+Answer only 3 of the 6 questions. If you attempt more, only the first 3 in the answer booklet will be awarded marks.
+
+Each question is worth 25 marks. i.e. 75 marks = 100% success.
+
+
+Academic judgment is used in awarding marks. However, guidelines of how marks are distributed can be found within the questions.
+
+The use of calculators is permitted in this examination.
+The use of dictionaries is not permitted in this examination.
+
+
+
+
+Q1.
+	•	With the aid of an example, explain the concept and operation of NodeJS Express middleware.
+
+	•	Explanation of Express middleware
+(7 Marks)
+
+	•	Code example of the use of middleware
+(3 Marks)
+
+
+	•	Explain the term "referential integrity" and how it may be used in a relational database.
+(5 Marks)
+
+	•	Environment variables are a key element in software development and deployment, particularly in containerised environments.
+
+	•	Explain the term "Environment variables". 
+(3 Marks)
+	•	What benefits do they offer?
+(3 Marks)
+	•	How might you use them in a multi-container configuration such as Docker Compose and Kubernetes?
+(4 Marks)
+
+
+Q2.
+
+	•	Explain four potential business and / or technical benefits of cloud hosting as opposed to on-premises hosting for a large organisation. Three marks are available for each of the four substantial and justified benefits.
+(12 Marks)
+
+	•	Explain the key properties of the IaaS and PaaS cloud service offerings, providing a brief use-case for each and reference to the shared responsibility model. 
+(6 Marks)
+	•	Explain the asymmetric public key encryption process, of Alice securely sending an encrypted message to Bob such that only Bob can read it and he has an assurance that it was sent by Alice and not someone pretending to be Alice.
+(7 Marks)
+
+
+
+Q3.
+	•	Explain the rationale and key properties of a microservice.
+(6 Marks)
+	•	Explain the rationale and key properties of a composite microservice.
+(4 Marks)
+	•	Figure 1 illustrates a Joke service implemented as a message-based microservice architecture. A joke submitted to the /sub endpoint is asynchronously sent to the moderate service where the front-end is polling for a new joke. The moderator can approve a joke using the /mod endpoint and asynchronously submit it to the joke microservice where it is stored in the database. The /joke endpoint is used to read a joke from the joke service. /types are synchronous messages to ensure each microservice is aware of available joke types and the types volumes hold local copies of joke types for resilience. 
+
+Redraw the message-based microservice architecture in Figure 1 as an event driven solution, explaining the event flow from joke submission to joke retrieval clearly indicating which are synchronous messages and which are asynchronous.
+
+Seven marks are available for a clearly labelled diagram showing events.
+Eight marks are available for a clear and correct explanation of the message flow and how it is equivalent in functionality to the distributed system in Figure 1.
+(15 Marks)
+
+Figure 1
+
+Q4.
+Provide a brief explanation as to the functionality of the following Kubernetes components. i.e., what is their individual role in the Kubernetes container orchestration service? There are three marks available for parts a to g and four marks for part h:
+
+	•	Control plane
+	•	Kublet
+	•	Node
+	•	Pod
+	•	Replica set
+	•	Deployment
+	•	ConfigMap
+	•	Service - include a discussion of when you would choose ClusterIP, NodePort or LoadBalancer service type
+(25 Marks)
+
+
+Q5.
+	•	Provide a brief explanation of five properties of an API gateway. i.e., how could our distributed system design benefit from the properties offered by an enterprise strength API gateway such as Kong? Two marks are available for each property.
+(10 Marks)
+
+	•	Explain the structure and purpose of a digital certificate. Your answer should include:
+
+	•	Three key components of the certificate.
+(3 Marks)
+
+	•	The process involved to create one which is signed by a Certification Authority.
+
+(3 Marks)
+
+	•	An example of its use. i.e., what is it protecting and how does it enable that?
+
+(4 Marks)
+	•	With regard to a Json Web Token, explain its structure, and provide a use-case which relies on the characteristics of the JWT.
+(5 Marks)
+
+
+Q6.
+	•	Using a UML style sequence diagram, explain the process for a user accessing protected resources in a web application. i.e., a user visits a web application that requires authentication using the OpenID connect authorisation flow.  Explain what happens at each step in the process up to the point that the user has full access to the application and the application has access to the user's name, email address and photo which will be displayed on the web page to personalise it. 
+
+	•	Draw a clear and correct diagram.
+(6 Marks)
+
+	•	Provide a clear explanation of the functionality at each key stage in the process with clear reference to the diagram.
+(9 Marks)
+
+
+	•	With the aid of one or more diagrams, explain the SAGA orchestration data pattern which aims to deal with the challenges of transactional processing in a distributed system such as a microservices architecture. Your explanation should clearly explain the processes of a successful and a failed transaction which spans three microservices.
+
+(10 Marks)
+
+

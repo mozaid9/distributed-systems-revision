@@ -1,0 +1,113 @@
+2024-2024
+
+Examination Period 4
+
+Module:	CO3404
+
+Module CRN:	57886
+
+Exam Type:	Written
+
+Module Title:	Distributed Systems
+
+Module Leader:	Tony Nicol
+
+
+Examination Paper Structure
+
+There are 5 questions in total.
+There are no appendices.
+The mark obtainable for a question or part of a question is shown in brackets alongside the question.
+
+Students to be provided with:
+
+1 answer book
+
+Instructions to Students:
+
+The time allowed to complete this examination paper is 1.5 hours.
+Answer only 3 of the 5 questions. If you attempt more, only the first 3 in the answer booklet will be awarded marks.
+
+Each question is worth 25 marks. i.e. 75 marks = 100% success.
+
+
+Academic judgment is used in awarding marks. However, guidelines of how marks are distributed can be found within the questions.
+
+The use of calculators is permitted in this examination.
+The use of dictionaries is not permitted in this examination.
+
+
+
+
+Q1.
+	•	Explain the key properties that https offers over http when calling a web API and explain why you may choose to use one over the other in your solutions.
+(8 Marks)
+
+
+	•	Explain why it is so important to document API endpoints and explain the key elements you would typically include in your documentation if using an OpenAPI standard approach.
+(8 Marks)
+
+
+	•	
+	•	Explain the purpose and benefits of NodeJs Express middleware. 
+(3 Marks)
+
+	•	Provide a use-case example which requires you to create a middleware function to implement the use-case. Explain how and when your function would be called between receiving the http request and issuing an http response. There is no need to write code unless it helps you with your explanation.
+
+(6 Marks)
+
+Q2.
+
+	•	Explain the difference between a cloud-based IaaS and PaaS service offering. When might you choose one over the other?
+(5 Marks)
+
+	•	Explain the term “resilience” in relation to cloud-based systems and provide three examples of how you could make your solutions resilient. 
+
+(10 Marks)
+
+	•	With the aid of a diagram, explain the purpose and operation of a load balancer component in elastic-compute solutions. 
+(10 Marks)
+
+
+
+Q3.
+	•	With the aid of an appropriate use-case, explain why you might use a Docker “named volume”. Clearly explain what problem it solves and the impact of not using one.
+
+(9 Marks)
+
+	•	Explain how a message queue can be used to loosely couple microservices and increase system resilience. Provide and explain a use-case for this pattern.
+
+(8 Marks)
+
+	•	Explain the publisher-subscriber messaging pattern and apply it to a relevant  use-case.
+(8 Marks)
+
+
+Q4.
+	•	Explain the difference between functional and non-functional requirements and provide two examples of each.
+(5 Marks)
+
+	•	Provide and justify five business benefits of moving on-premises systems to the cloud. 
+(10 Marks)
+
+	•	Provide and justify five business benefits of creating a distributed systems architecture as opposed to a monolithic approach. Use the microservices architectural pattern as the distributed system approach in your explanation. 
+(10 Marks)
+
+
+
+
+Q5.
+	•	Explain same-origin policy and cross-origin resource sharing (CORS), clearly explaining, with examples, what an origin is. Draw a diagram if that helps with your explanation.
+(10 Marks)
+
+	•	Bob sends a digitally signed contract of employment to Alice accepting her job offer. Explain how the digital signature from Bob provides Alice with assurance of authenticity, integrity and non-repudiation. i.e., the document definitely came from Bob, it has not been interfered with, and Bob can’t change his mind and claim it wasn’t he who sent it to Alice.
+
+(10 Marks)
+
+
+	•	An API returns data in JSON format. The data consists of a person’s age of 25, their first name is Bob and their last name is Martin. Bob has three children called Jim, Jane and Susan.
+
+Create an appropriate JSON structure to represent this data.
+
+(5 Marks)
+

@@ -1,0 +1,153 @@
+2024-2024
+
+Examination Period 2
+
+Module:	CO3404
+
+Module CRN:	57886
+
+Exam Type:	Written
+
+Module Title:	Distributed Systems
+
+Module Leader:	Tony Nicol
+
+
+Examination Paper Structure
+
+There are 5 questions in total.
+There are no appendices.
+The mark obtainable for a question or part of a question is shown in brackets alongside the question.
+
+Students to be provided with:
+
+1 answer book
+
+Instructions to Students:
+
+The time allowed to complete this examination paper is 1.5 hours.
+Answer only 3 of the 5 questions. If you attempt more, only the first 3 in the answer booklet will be awarded marks.
+
+Each question is worth 25 marks. i.e. 75 marks = 100% success.
+
+
+Academic judgment is used in awarding marks. However, guidelines of how marks are distributed can be found within the questions.
+
+The use of calculators is permitted in this examination.
+The use of dictionaries is not permitted in this examination.
+
+
+
+
+Q1.
+	•	For the following use-case, design an appropriate web API endpoint, explain why you have designed it in the way you have, and provide an example of it being used.
+
+Use-case
+You are a member of a team working on an online bookstore web application. You are tasked with designing an API endpoint to retrieve a book based on the media type and genre. Additionally, users can filter the search results by author, title and cost based on an upper price range. An example response is:  {
+  "books": [
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "year": 1949,
+      "genre": "Dystopian",
+      "price": "£10.99",
+      "edition": 1,
+      "isbn": "978-0-452-28423-4",
+      "media": "Hardback”
+    }
+  ]
+}
+
+
+	•	Endpoint design and explanation
+(6 Marks)
+
+
+	•	Provide an example of a call to this endpoint at port 443, using appropriate parameter values to return the book in part 1ai above.
+
+(4 Marks)
+
+
+	•	When a NodeJS express server receives the API request from part a, explain how the express framework handles this request such that the appropriate endpoint is executed. You don’t need to write any code unless it helps with your explanation.
+
+(10 Marks)
+
+
+	•	When your NodeJS express server responds to the API call in part b, it should return an http response code. Explain what a server response code is and provide three codes your server could return and under what circumstances.
+
+(5 Marks)
+
+Q2.
+
+	•	What is the difference between imperative and declarative programming? Why is declarative programming generally favoured over imperative programming for building infrastructure using infrastructure as code (IaC)?
+(5 Marks)
+
+
+	•	With reference to the Terraform code below, referencing line numbers, answer the following questions: 
+	•	Explain the purpose of a “null_resource” resource	(5 Marks)
+	•	Explain the operation of lines 2 to 4	(5 Marks)
+	•	Explain the operation of the file provisioner. Starts at 6	(5 Marks)
+	•	Explain the operation of the remote-exec provisioner. Starts at 17	(5 Marks)
+Note: don’t waste time rewriting chunks of this code in your answers, simply explain the key purpose and operation of the code using line number references.
+
+Terraform code:
+
+
+Q3.
+	•	Provide, with justification, two key benefits of deploying software solutions in containers as opposed to installing the applications and databases directly on the host operating system.
+
+(6 Marks)
+
+	•	You are very familiar with how Docker Compose enables simple container creation and deployment, but in an enterprise system, particularly distributed systems, we are more likely to use Kubernetes. Provide, with justification, two advantages that Kubernetes offers over Docker Compose in a distributed enterprise system.
+
+(6 Marks)
+
+	•	With the aid of a simple diagram, explain how Kubernetes enables rolling updates with no downtime using a Deployment object and a ReplicaSet object. You should explain the function of a ReplicaSet object then explain how the Deployment object can use it to perform rolling updates.
+(13 Marks)
+
+
+Q4.
+	•	Explain how a digital certificate protects a web user. Your answer should explain what a certificate is, the process the browser goes through, and the cypher techniques used to validate the provided intermediate and server certificates.
+
+(10 Marks)
+
+
+	•	Microservices in a distributed system often need to communicate with each other. Discuss one advantage, one disadvantages and one potential use case for each of the following messaging patterns: http, message queue and event messaging. Up to Five marks are available for each messaging pattern.
+
+(15 Marks)
+
+
+
+
+Q5.
+	•	Briefly explain the purpose of using an API gateway in a distributed system.
+(5 Marks)
+
+
+	•	Provide five key benefits of using a MySQL database connection pool as opposed to a direct connection to the database. The following code is provided for reference to help you formulate part of your answer.
+function createConPool() {
+  const connectionObj = {
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: PASSWORD = process.env.MYSQL_PASSWORD,
+    database: DATABASE = process.env.MYSQL_DATABASE,
+    port: process.env.MYSQL_PORT,
+
+    waitForConnections: true, 
+    connectionLimit: 10,      
+    queueLimit: 0             
+  }
+  pool = mysql.createPool(connectionObj)
+}
+
+(10 Marks)
+
+
+
+
+	•	Distributed systems should be scalable. However, relational databases are difficult to horizontally scale. With the aid of a diagram, explain an approach that goes some way towards horizontal scaling using read replicas. 
+
+Your explanation should provide: two reasons relational databases are difficult to horizontally scale, how the read replica architecture works by referencing your diagram, and one benefit and one limitation of the approach.
+
+(10 Marks)
+

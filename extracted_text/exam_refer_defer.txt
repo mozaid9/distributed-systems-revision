@@ -1,0 +1,157 @@
+2023-2024
+
+Examination Period 4
+
+Module:	CO3404
+
+Module CRN:	57886
+
+Exam Type:	Written
+
+Module Title:	Distributed Systems
+
+Module Leader:	Tony Nicol
+
+
+Examination Paper Structure
+
+There are 6 questions in total.
+There are no appendices.
+The mark obtainable for a question or part of a question is shown in brackets alongside the question.
+
+Students to be provided with:
+
+1 answer book
+
+Instructions to Students:
+
+The time allowed to complete this examination paper is 1.5 hours.
+Answer only 3 of the 6 questions. If you attempt more, only the first 3 in the answer booklet will be awarded marks.
+
+Each question is worth 25 marks. i.e., 75 marks = 100% success.
+
+Academic judgment is used in awarding marks. However, guidelines of how marks are distributed can be found within the questions.
+
+The use of calculators is permitted in this examination.
+The use of dictionaries is not permitted in this examination.
+
+
+
+
+Q1.
+	•	Explain the difference between synchronous and asynchronous function calls and why JavaScript needs both. List the mechanisms JavaScript employs to enable asynchronous code execution. 
+(7 Marks)
+
+	•	Design an API URL to return "count" bank transactions from a specified month.  The API path should include: the bank branch, account type, account-number, the number of transactions and the month. 
+
+Provide an example of using your URL to access a current account, from the Preston branch using an account number 12345 to request 20 transactions from the start of June. Explain why you have formed your URL in this way.
+(6 Marks)
+
+	•	
+	•	Explain the key differences between the following standard API documentation approaches: API-first, design-first, and code first.
+(6 Marks)
+
+	•	Provide a valid use-case for each documentation approach.
+(6 Marks)
+
+Q2.
+	•	In cloud computing, provide three clear benefits an availability zone offers regarding system resilience. Two marks are available for each justified benefit. For example, "An availability zone offers 'benefit a' which offers protection of 'b' by …"
+(6 Marks)
+
+	•	Explain the key differences between a type1 and type 2 hypervisor. Provide a use-case for each.
+(4 Marks)
+	•	Explain the concept of containerisation regarding its operation and the benefits it brings to software deployment and operation.
+(7 Marks)
+	•	Explain the term "Cross Origin Resource Sharing" (CORS) and the approaches for dealing with it in Nodejs.
+
+	•	Explanation of CORS.
+(3 Marks)
+
+	•	Approaches for dealing with CORS varying from "allow all" through to restricting access for a specific method on a specific endpoint. 
+(5 Marks)
+
+
+
+Q3.
+
+	•	Provide four advantages and/or disadvantages of monolithic and microservice based architectures. There are two marks available for each example.
+
+(8 Marks)
+
+	•	Explain the terms "thick" and "thin" events in relation to an event-driven architecture and explain, under which circumstances, you may choose one over the other.
+
+	•	Explanation
+(3 Marks)
+
+	•	A rationale for choosing one over the other
+(3 Marks)
+
+
+	•	In Transport Layer Security (TLS), session keys are used. Explain the term "session keys", state how many there are and what each is used for.
+(4 Marks)
+
+	•	What is meant by the term "elastic compute"? With the aid of a diagram, discuss the main components and their use in enabling "elastic compute".
+(7 Marks)
+
+
+
+
+Q4.
+
+	•	Although a file hash can be useful for integrity, the file could be copied by a nefarious third party, modified, for example by adding a trojan horse, then the hash recomputed ready for redistribution. 
+
+Explain two approaches that overcome this risk whilst still maintaining the integrity but also providing the authenticity of the original source. Five marks are available for each method.
+
+(10 Marks)
+
+
+	•	Explain each step in the TLS handshake process from making an initial TCP connection from a browser through to bi-directional encrypted data in transit. 
+
+Marks will be distributed across each endpoint in the process and its associated explanation.
+
+You do not need to explain how the session keys are generated, or explain any of the cryptographic algorithms, simply refer to their use in the process.
+(15 Marks)
+
+Q5.
+	•	Kubernetes supports rolling upgrades. Explain what this means and how it works.
+(7 Marks)
+
+	•	In the docker compose.yaml file illustrated below, clearly explain what each of the declarations achieve at lines: 2, 6, 8, 14, 20 and 24. Two marks are available for each explanation.
+
+Note: it is the declaration section at the line number you need to discuss. The content of each section is simply provided as an example to provide some context and help with your explanation. For example, at line 14 you need to explain what the declaration 'healthcheck' aims to achieve - there is no requirement to discuss the detail of the 'healthcheck' code on line 15.
+
+(12 Marks)
+
+	•	Explain the process of developing an application, containerising it and deploying it to a cloud-based virtual machine.
+(6 Marks)
+	•	
+
+
+
+Q6.
+	•	Explain the "ACID" concept associated with transactional processing. 
+(5 Marks)
+
+
+	•	Explain the challenge of implementing transactions in a distributed microservice-based architecture and suggest one potential approach to deal with the challenge if you are prepared to accept some business acceptable risks. Provide an example of a business risk and its potential business impact in this context.
+
+	•	Explanation of the challenge
+(3 Marks)
+	•	A potential solution
+(3 Marks)
+	•	Example of business risk and potential impact
+(3 Marks)
+
+
+	•	Most microservices need data from other microservices to do their work. Discuss the two main approaches to sharing data across microservices using a synchronous, and an asynchronous approach. 
+
+Provide an advantage and disadvantage of each approach that would be considered when choosing the most appropriate solution. Note, there are two key approaches for asynchronous messaging hence the difference in marks for each.
+
+	•	Synchronous messaging discussion, advantage, disadvantage
+(4 Marks)
+
+
+	•	Asynchronous messaging discussions, advantage of each, disadvantage of each. Note: the advantage and disadvantage for each should be different for these two approaches.
+(7 Marks)
+
+

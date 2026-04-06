@@ -1,0 +1,123 @@
+2022-2023
+
+Examination Period 2
+
+Module:	CO3404
+
+Module CRN:	57886
+
+Exam Type:	Written
+
+Module Title:	Distributed Systems
+
+Module Leader:	Tony Nicol
+
+
+Examination Paper Structure
+
+There are 6 questions in total.
+There are no appendices
+The mark obtainable for a question or part of a question is shown in brackets alongside the question
+
+Students to be provided with:
+
+1 answer book
+
+Instructions to Students:
+
+The time allowed to complete this examination paper is 2.0 hours.
+Answer only 4 of the 6 questions. If you attempt more, only the first 4 in the answer booklet will be awarded marks
+Each question is worth 25 marks
+
+Academic judgment is used in awarding marks. However, guidelines of how marks are distributed can be found within the questions
+
+The use of calculators is permitted in this examination.
+The use of dictionaries is not permitted in this examination.
+
+
+
+
+Q1.
+	•	With the aid of a relevant use-case and diagram, explain why you may recommend the implementation of an API gateway for your microservice architecture. i.e., what problems does it solve and what benefits could it bring to your use-case solution?
+
+Up to five marks are available for the diagram, simple use-case, and overview. The remainder are awarded for each of five key advantages or disadvantages, clearly explained, justified, and mapped to the use-case. 
+(15 Marks)
+
+	•	Provide five clearly explained and justified financial and/or operational drivers behind businesses moving their on-premises monolithic platforms to a distributed solution hosted in the cloud?  
+
+(10 Marks)
+
+
+Q2.
+
+	•	Ideally, a microservice and its data should be independent. However, in reality, not all services are fully decomposable with regard to data.  With the aid of a diagram and simple use-case, explain how an event driven architecture can be used to share data between microservices without sharing a database. Marks are awarded for each key point discussed in the explanation of data flow between microservices.
+(10 Marks)
+
+	•	Compare and contrast the “shared message queue” pattern to the “publisher – subscriber” pattern. With the aid of a diagram, provide a microservice-based use-case for each and an explanation of why you recommend the pattern for each use-case. 
+
+Three marks will be awarded for each clearly explained and justified key point mapped to the appropriate use-case. 
+(15 Marks)
+
+
+Q3.
+Database servers need to be scaled as data volume and traffic increases.
+
+	•	What challenges do you encounter when scaling a relational database such as MySQL server?  Provide one example of how you may attempt to deal with the challenges. 
+
+Two marks are awarded for each clearly explained and justified challenge and up to four marks for a practical suggestion to enable horizontal scaling.
+(10 Marks)
+
+	•	More modern NoSQL databases, such as MongoDB, overcome the scaling limitation of relational databases but introduce new challenges when scaled.  Explain how “sharding” and “consistent hashing” can support database distribution and resilience.
+
+Marks will be awarded for a clear explanation of the challenges of sharding and how “consistent hashing” aims to address those challenges. Your explanation would benefit from a diagram, and should include a clear discussion of: sharding, data distribution, adding and removing nodes, resilience, and data replication.
+
+(15 Marks)
+
+
+
+Q4.
+	•	With the aid of a diagram, explain the process of Web Single Sign-On using OpenID Connect “Authentication flow” grant type.
+
+Marks will be awarded for the accuracy and detail of each of the key steps in the data flow so clearly indicate each key step on the diagram and reference each in your explanation. 
+	•	Marks)
+
+	•	Explain Cross Origin Resource Sharing (CORS) and how your server code would deal with handling the cross-origin requests.
+
+Your explanation should include, and marks will be distributed across:
+What is CORS and why do we need it?
+How can a browser determine if CORS is allowed?
+How does your Node.js server code allow CORS?
+How does your server code limit which resources are shareable?
+
+(10 Marks)
+
+
+Q5.
+	•	A digital certificate is necessary to enable a client, such as a web browser, or mutual authentication between servers or services, to trust each other. In the simpler case of a browser establishing a secure session with a server, the browser needs to be able to trust the server with which it is trying to establish the secure session.
+
+With the aid of diagrams where appropriate, explain the process of creating and deploying a digital certificate and the process a client (browser) undertakes to ensure the server is “who” it says it is.  Your answer should include reference to, and marks will be distributed across the following key concepts and any associated diagrams:
+
+	•	Certificate Signing Request (CSR)
+	•	Chain of trust
+	•	Key properties of the x.509 certificate
+	•	Digital signature and how it works
+(15 Marks)
+
+	•	What is meant by the term “Shared Responsibilities” in cloud computing? Provide a brief explanation of each of the service models from on-premises, through to software as a service, identifying the key areas of who (client or host provider) is responsible for what.  
+
+Marks will be awarded for an appropriate explanation and justification of each of the standard cloud service offerings.
+(10 Marks)
+
+Q6.
+	•	You have been asked to design a highly available, and elastically scalable solution to a business problem. Propose a cloud-based solution architecture, draw it, and explain how it satisfies these high-level requirements. Note: the actual business problem is not relevant here, just assume it needs web servers to operate.
+
+Marks will be allocated for a clear explanation of the key terms: highly available and elastically scalable which are clearly mapped to your high-level architectural diagram. In this case assume roughly five marks for each of the two key terms and five marks for the diagram.
+
+(15 Marks)
+
+	•	With the aid of a diagram, explain the structure, benefits, and key differences between a virtual machine and a container giving an example of where you may use one over the other
+
+Marks will be apportioned roughly: up to two marks for each well explained and justified key point and up to three marks for an appropriate and well annotated diagram.
+
+(10 Marks)
+

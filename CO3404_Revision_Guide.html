@@ -2021,7 +2021,23 @@ App App
 
 <div class="box warn"><div class="box-title">Important beginner point</div>If a database writes only inside the container and the container is removed, the data is lost. That is the problem the <strong>named volume</strong> solves.</div>
 
-<h3>11.4 Annotated Docker Compose YAML — 2023/24 refer/defer Q5b style</h3>
+<h3>11.4 Named volume vs bind mount</h3>
+<table>
+  <tr><th>Option</th><th>What it does</th><th>Best use-case</th><th>Main trade-off</th></tr>
+  <tr><td>Named volume</td><td>Docker-managed persistent storage</td><td>Databases and persistent app data</td><td>Less direct visibility of the host path</td></tr>
+  <tr><td>Bind mount</td><td>Maps a specific host folder into the container</td><td>Local development, sharing source files or config from host to container</td><td>Tighter dependency on the host file structure</td></tr>
+</table>
+
+<div class="box key"><div class="box-title">Fast decision rule</div>
+Use a <strong>named volume</strong> when you care mainly about persistent container data.<br>
+Use a <strong>bind mount</strong> when you want the container to work directly with a specific folder on the host machine.
+</div>
+
+<div class="box tip"><div class="box-title">Exam-safe compare line</div>
+Named volumes are usually the cleaner answer for database persistence. Bind mounts are usually the cleaner answer for development convenience when you want live access to host files.
+</div>
+
+<h3>11.5 Annotated Docker Compose YAML — 2023/24 refer/defer Q5b style</h3>
 <p>The 2023/24 refer/defer exam gave a <code>compose.yaml</code> file and asked you to explain specific <strong>line numbers</strong> for 2 marks each (12 marks total). The question said: explain the <em>declaration</em> at that line — not the specific values, but what that block <em>achieves</em>. Here is a representative example with the same key declarations the exam tested:</p>
 
 <pre><code><span class="comment"># Line 2</span>
@@ -2068,7 +2084,7 @@ volumes:
 <strong>1)</strong> Name what the declaration is. <strong>2)</strong> Explain what it achieves in the wider system. <strong>3)</strong> State what would happen without it. Two marks means: definition + consequence.
 </div>
 
-<h3>11.5 How it appears in past papers</h3>
+<h3>11.6 How it appears in past papers</h3>
 <ul>
   <li>2022/23 main compared VMs and containers.</li>
   <li>2023/24 asked about environment variables in Compose and Kubernetes-style setups.</li>
@@ -2080,7 +2096,7 @@ volumes:
   <li>What is the difference between a Docker image and a Docker container?</li>
   <li>Why can containers start faster than virtual machines?</li>
   <li>What problem does a named volume solve for a database?</li>
-  <li>What is one benefit of environment variables?</li>
+  <li>When is a bind mount usually more useful than a named volume?</li>
   <li>What is the difference between a type 1 and type 2 hypervisor?</li>
 </ol>
 <details><summary style="cursor:pointer;color:#854d0e;font-weight:600;margin-top:.5rem">Show Answers</summary>
@@ -2088,14 +2104,14 @@ volumes:
   <li>An image is the packaged blueprint; a container is a running instance created from that image.</li>
   <li>Because they do not need to boot a full guest operating system in the same way a VM does.</li>
   <li>It keeps the database files outside the ephemeral container so the data survives container recreation.</li>
-  <li>They let you change configuration without hard-coding values into the source code.</li>
+  <li>When you want the container to use a specific host folder directly, which is common in local development.</li>
   <li>A type 1 hypervisor runs directly on hardware, while a type 2 hypervisor runs on top of a host operating system.</li>
 </ol>
 </details>
 </div>
 
 <div class="box model"><div class="box-title">Exam tip</div>
-<p>If the question asks why a named volume is useful, answer three things clearly: <strong>what problem exists without it</strong>, <strong>how the volume solves that problem</strong>, and <strong>what the consequence is if you do not use one</strong>.</p>
+<p>If the question asks why a named volume is useful, answer three things clearly: <strong>what problem exists without it</strong>, <strong>how the volume solves that problem</strong>, and <strong>what the consequence is if you do not use one</strong>. If the question compares it with a bind mount, add one sentence on host-folder mapping and development convenience.</p>
 </div>
 </section>
 
